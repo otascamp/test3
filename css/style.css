@@ -1,0 +1,265 @@
+
+*{
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+/*body{*/
+/*    background-color: var(--bg-color);*/
+/*    height: 1500px;*/
+/*}*/
+nav{
+    /*background-image: url("../mangaimg/image1.5.jpg");*/
+    background-color:rgba(255,255,255,0.5);
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    transition: all 0.5s;
+}
+
+.logo{
+    transition: all 0.5s;
+}
+
+nav.active{
+    background-color: #fff;
+    height: 80px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+nav.active a .logo{
+    width: 70px;
+    height: 70px;
+}
+
+h2{
+    color: #000;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 10px rgba(255,255,255,0.5);
+}
+
+@media (max-width: 500px){
+    nav{
+        height: 80px;
+    }
+
+    .logo{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+/*start banner*/
+.banner{
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+
+    overflow: hidden;
+
+    position: absolute;
+
+}
+
+.slide{
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+
+    position: fixed;
+
+    display: none;
+}
+
+.slide.active{
+    display: block;
+}
+
+.slide::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(
+            90deg,
+            rgba(0,0,0,0.9) 10%,
+            rgba(0,0,0,0.1) 100%
+    );
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.titles{
+    width: 400px;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    text-transform: capitalize;
+
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.banner-texts p:nth-of-type(1){
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+
+
+/*start banner*/
+.banner{
+    position: relative;
+}
+
+/*.banner-container{*/
+/*    height: 600px;*/
+/*}*/
+
+/*end banner*/
+
+/*start section*/
+section{
+    position: relative;
+}
+
+
+/*start season*/
+
+.season{
+    width: 200px;
+    height: 50px;
+    background-color: #999;
+    color: #000;
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 90%;
+
+    transform: translateY(-50px) scale(0.89);
+
+    transition: all 0.5s;
+
+
+}
+
+.season:active{
+    transform:translateY(-50px) scale(1.05);
+}
+
+.season-container.active .season{
+    background-color: #f4f4f4;
+    box-shadow: 0 -3px 3px rgba(0,0,0,1);
+
+    transform: translateY(-50px) scale(1);
+    z-index: 2;
+}
+
+.sone{
+    left: 90px;
+}
+
+.season-container.active .season.sone{
+    left: 100px;
+}
+
+.season.stwo{
+    left: 290px;
+}
+
+.season-container.active .season.stwo{
+    left: 280px;
+}
+
+/*end season*/
+
+
+/*start episode*/
+.episode-containers{
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+    background-color: #f4f4f4;
+
+    position: absolute;
+    top: 90%;
+    left: 100px;
+
+    overflow: hidden;
+
+    display: none;
+
+    z-index: 1;
+}
+
+.season-container.active .episode-containers{
+    display: block;
+}
+
+.episodes{
+    height: 100px;
+    /*background-color: #fff;*/
+    border-bottom: 2px solid rgba(0,0,0,0.8);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*.episodes:nth-of-type(even){*/
+/*    background-color: gray;*/
+/*}*/
+
+.episodes:last-child{
+    border: 0;
+}
+
+.summery-containers{
+    border-left: 1px solid rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.download{
+    height: 100px;
+    /*background-color: steelblue;*/
+    border-bottom: 2px solid rgba(0,0,0,0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.download:last-child{
+    border: 0;
+}
+
+.ratings{
+    float: right;
+    margin-right: 10px;
+}
+
+.summery{
+    width: 300px;
+    height: 350px;
+
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+}
+
+.episodes-collection{
+    display: block;
+}
+
+/*end section*/
